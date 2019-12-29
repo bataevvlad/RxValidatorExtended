@@ -13,6 +13,7 @@
 		6A6160D823B912C800820E76 /* DropDownValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6160D723B912C800820E76 /* DropDownValidator.swift */; };
 		6A6160DB23B9137B00820E76 /* ObjectShouldBeNotNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6160DA23B9137B00820E76 /* ObjectShouldBeNotNil.swift */; };
 		6A6160DD23B9143000820E76 /* CustomObjectValidationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6160DC23B9143000820E76 /* CustomObjectValidationTarget.swift */; };
+		6A6160DF23B9206000820E76 /* RegEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6160DE23B9206000820E76 /* RegEx.swift */; };
 		9D1550D22167CE4900C5C889 /* RxValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D1550D02167CE4900C5C889 /* RxValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D1550FE2167CEEC00C5C889 /* RxValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D1550D02167CE4900C5C889 /* RxValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D1550FF2167CEF300C5C889 /* RxValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D1550D02167CE4900C5C889 /* RxValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -174,6 +175,7 @@
 		6A6160D723B912C800820E76 /* DropDownValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownValidator.swift; sourceTree = "<group>"; };
 		6A6160DA23B9137B00820E76 /* ObjectShouldBeNotNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectShouldBeNotNil.swift; sourceTree = "<group>"; };
 		6A6160DC23B9143000820E76 /* CustomObjectValidationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomObjectValidationTarget.swift; sourceTree = "<group>"; };
+		6A6160DE23B9206000820E76 /* RegEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegEx.swift; sourceTree = "<group>"; };
 		9D1550CE2167CE4900C5C889 /* RxValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1550D02167CE4900C5C889 /* RxValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxValidator.h; sourceTree = "<group>"; };
 		9D1550D12167CE4900C5C889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 			children = (
 				6A6160D223B90F4600820E76 /* BaseValidator.swift */,
 				OBJ_8 /* Validate.swift */,
+				6A6160DE23B9206000820E76 /* RegEx.swift */,
 				OBJ_9 /* ValidationTarget */,
 				OBJ_13 /* extensions */,
 				OBJ_17 /* protocols */,
@@ -841,6 +844,7 @@
 				9D53FC582167E1EE00BE3F59 /* NumberValidationTarget.swift in Sources */,
 				9D53FCBF2168C7EC00BE3F59 /* DateShouldAfterThen.swift in Sources */,
 				9D53FC592167E1EE00BE3F59 /* StringValidationTarget.swift in Sources */,
+				6A6160DF23B9206000820E76 /* RegEx.swift in Sources */,
 				9D53FC5A2167E1EE00BE3F59 /* Observable+Date+Extension.swift in Sources */,
 				9D53FCB92168C64E00BE3F59 /* DateShouldEqualTo.swift in Sources */,
 				9D53FC5B2167E1EE00BE3F59 /* Observable+Number+Extension.swift in Sources */,
