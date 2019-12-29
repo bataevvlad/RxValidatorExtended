@@ -5,15 +5,19 @@
 //  Created by 유금상 on 2018. 5. 30..
 //
 
-private final class StringIsNotOverflowThen: StringValidator {
-    let maxLength: Int
+open class StringIsNotOverflowThen: StringValidator {
     
-    init(maxLength: Int) {
+    public let maxLength: Int
+    
+    public init(maxLength: Int) {
         self.maxLength = maxLength
     }
     
-    override func validate(_ value: String) throws {
-        if value.count > maxLength {
+    override public func validate(_ value: String?) throws {
+        if (value == nil) {
+            throw RxValidatorResult.nilObject
+        }
+        else if value!.count > maxLength {
             throw RxValidatorResult.stringIsOverflow
         }
     }

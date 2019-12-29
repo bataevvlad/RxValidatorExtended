@@ -7,8 +7,8 @@
 
 import Foundation
 
-public class DateValidator {
+open class DateValidator {
     public func validate(_ value: Date, granularity: Calendar.Component = .minute) throws {}
 
-    init() {}
+    public init() {}
 }

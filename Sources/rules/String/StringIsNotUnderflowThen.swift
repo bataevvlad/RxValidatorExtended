@@ -5,15 +5,19 @@
 //  Created by Kawoou on 06/10/2018.
 //
 
-private final class StringIsNotUnderflowThen: StringValidator {
-    let minLength: Int
+open class StringIsNotUnderflowThen: StringValidator {
+    
+    public let minLength: Int
 
-    init(minLength: Int) {
+    public init(minLength: Int) {
         self.minLength = minLength
     }
 
-    override func validate(_ value: String) throws {
-        if value.count < minLength {
+    override public func validate(_ value: String?) throws {
+        if (value == nil) {
+            throw RxValidatorResult.nilObject
+        }
+        else if value!.count < minLength {
             throw RxValidatorResult.stringIsUnderflow
         }
     }

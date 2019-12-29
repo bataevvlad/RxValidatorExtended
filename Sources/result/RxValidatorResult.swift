@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum RxValidatorResult: Error,  Equatable {
+public enum RxValidatorResult: Error, Equatable {
     case valid
     case notValid
     case notValidWithMessage(message: String)
@@ -30,6 +30,7 @@ public enum RxValidatorResult: Error,  Equatable {
     case notBeforeDate
     case notAfterDate
     case notEqualDate
+    case nilObject
     
     public static func ==(lhs: RxValidatorResult, rhs: RxValidatorResult) -> Bool {
         switch (lhs, rhs){
@@ -69,9 +70,11 @@ public enum RxValidatorResult: Error,  Equatable {
             return true
         case (.notEqualDate, .notEqualDate):
             return true
+        case (.nilObject, .nilObject):
+            return true
         default:
             break
-        }  
+        }
         return false
     }
     
@@ -79,16 +82,13 @@ public enum RxValidatorResult: Error,  Equatable {
         if let validateError = error as? RxValidatorResult {
             return validateError
         }
-        
         return .undefinedError
     }
     
     public func getCode() -> Int? {
         switch self {
-        case .notValidWithCode(let code):
-            return code
-        default:
-            return nil
+        case .notValidWithCode(let code): return code
+        default: return nil
         }
     }
     

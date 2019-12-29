@@ -8,27 +8,27 @@
 import Foundation
 import RxSwift
 
-public final class StringValidationTarget: ValidationTarget {
+open class StringValidationTarget: ValidationTarget {
     
     public typealias TargetType = String
     public typealias ValidatorType = StringValidator
     
-    public let value: TargetType
+    public let value: TargetType?
     public var result: Observable<TargetType>?
     
-    required public init(_ value: TargetType) {
+    required public init(_ value: TargetType?) {
         self.value = value
     }
     
-    public func validate(_ validator: StringValidator) -> Self {
+    public func validate(_ validator: StringValidator?) -> Self {
         guard self.result == nil else {
             return self
         }
         
         do {
-            try validator.validate(value)
+            try validator?.validate(value!)
         } catch {
-            result = Observable.error(error)            
+            result = Observable.error(error)
         }
         
         return self
@@ -39,7 +39,7 @@ public final class StringValidationTarget: ValidationTarget {
             return self
         }
         
-        if !condition(value) {
+        if !condition(value!) {
             if let msg = message {
                 self.result = Observable.error(RxValidatorResult.notValidWithMessage(message: msg))
             } else {

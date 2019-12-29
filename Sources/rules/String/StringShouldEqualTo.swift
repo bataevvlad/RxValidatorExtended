@@ -7,14 +7,19 @@
 
 import Foundation
 
-private final class StringShouldEqualTo: StringValidator {
-    let string: String
+open class StringShouldEqualTo: StringValidator {
+    
+    public let string: String
 
-    init(_ string: String) {
+    public init(_ string: String) {
         self.string = string
     }
-    override func validate(_ value: String) throws {
-        if value != string {
+    
+    override public func validate(_ value: String?) throws {
+        if (value == nil) {
+            throw RxValidatorResult.nilObject
+        }
+        else if value! != string {
             throw RxValidatorResult.notEqualString
         }
     }

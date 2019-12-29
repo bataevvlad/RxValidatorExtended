@@ -5,14 +5,19 @@
 //  Created by Kawoou on 06/10/2018.
 //
 
-private final class NumberShouldGreaterThan<T: Numeric & Comparable>: NumberValidator<T> {
-    let number: T
-
-    init(_ number: T) {
+open class NumberShouldGreaterThan<T: Numeric & Comparable>: NumberValidator<T> {
+    
+    public let number: T
+    
+    public init(_ number: T) {
         self.number = number
     }
-    override func validate(_ value: T) throws {
-        if value <= number {
+    
+    override public func validate(_ value: T?) throws {
+        if (value == nil) {
+            throw RxValidatorResult.nilObject
+        }
+        else if value! <= number {
             throw RxValidatorResult.notGreaterThanNumber
         }
     }

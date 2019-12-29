@@ -7,13 +7,13 @@
 
 import Foundation
 
-private final class DateShouldAfterOrSameThen: DateValidator {
-    let date: Date
+open class DateShouldAfterOrSameThen: DateValidator {
+    public let date: Date
 
-    init(_ date: Date) {
+    public init(_ date: Date) {
         self.date = date
     }
-    override func validate(_ value: Date, granularity: Calendar.Component) throws {
+    override public func validate(_ value: Date, granularity: Calendar.Component) throws {
         let calendar = Calendar(identifier: .gregorian)
         let result = calendar.compare(value, to: date, toGranularity: granularity)
 

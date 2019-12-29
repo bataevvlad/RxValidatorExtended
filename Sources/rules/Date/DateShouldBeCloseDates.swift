@@ -7,15 +7,16 @@
 
 import Foundation
 
-private final class DateShouldBeCloseDates: DateValidator {
-    let date: Date
-    let termOfDays: Int
+open class DateShouldBeCloseDates: DateValidator {
+    public let date: Date
+    public let termOfDays: Int
 
-    init(_ date: Date, termOfDays: Int) {
+    public init(_ date: Date, termOfDays: Int) {
         self.date = date
         self.termOfDays = termOfDays
     }
-    override func validate(_ value: Date, granularity: Calendar.Component) throws {
+    
+    override public func validate(_ value: Date, granularity: Calendar.Component) throws {
         let beforeDate = min(value, date)
         let afterDate = max(value, date)
 

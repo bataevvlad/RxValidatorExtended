@@ -5,9 +5,13 @@
 //  Created by 유금상 on 2018. 6. 20..
 //
 
-final class IntShouldBeEven: NumberValidator<Int> {
-    override func validate(_ value: Int) throws {
-        if (value % 2) != 0 {
+open class IntShouldBeEven: NumberValidator<Int> {
+   
+    override public func validate(_ value: Int?) throws {
+        if (value == nil) {
+            throw RxValidatorResult.nilObject
+        }
+        else if (value! % 2) != 0 {
             throw RxValidatorResult.notEvenNumber
         }
     }
